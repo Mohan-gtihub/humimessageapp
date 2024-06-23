@@ -1,13 +1,13 @@
 {
   "files": {
     "main.css": "/humimessageapp/static/css/main.ec6dcf85.css",
-    "main.js": "/humimessageapp/static/js/main.41f0be6a.js",
+    "main.js": "/humimessageapp/static/js/main.22feecb4.js",
     "index.html": "/humimessageapp/index.html",
     "main.ec6dcf85.css.map": "/humimessageapp/static/css/main.ec6dcf85.css.map",
-    "main.41f0be6a.js.map": "/humimessageapp/static/js/main.41f0be6a.js.map"
+    "main.22feecb4.js.map": "/humimessageapp/static/js/main.22feecb4.js.map"
   },
   "entrypoints": [
     "static/css/main.ec6dcf85.css",
-    "static/js/main.41f0be6a.js"
+    "static/js/main.22feecb4.js"
   ]
 }
