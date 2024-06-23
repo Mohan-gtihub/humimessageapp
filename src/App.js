@@ -8,12 +8,12 @@ import './App.css';
 
 // Your web app's Firebase configuration
 const firebaseConfig = {
-    apiKey: "AIzaSyD4i9nBFpNcaOWjrI1Fy8AtYBEOF7Qfd7o",
-    authDomain: "humiapp-b1fdc.firebaseapp.com",
-    projectId: "humiapp-b1fdc",
-    storageBucket: "humiapp-b1fdc.appspot.com",
-    messagingSenderId: "6286226417",
-    appId: "1:6286226417:web:17c6f332de2d3343370a50"
+  apiKey: "AIzaSyDaN9AhAk6kymPuAhJoW_HBqkP6cK0oNAI",
+  authDomain: "chat-app-696ea.firebaseapp.com",
+  projectId: "chat-app-696ea",
+  storageBucket: "chat-app-696ea.appspot.com",
+  messagingSenderId: "648533049223",
+  appId: "1:648533049223:web:e822d8bf1bc6a3f00f5d22"
 }; 
 
 // Initialize Firebase
@@ -33,13 +33,13 @@ function Chat() {
 }
 
 function SignIn() {
-    const signInWithFacebook = () => {
-        const provider = new firebase.auth.FacebookAuthProvider();
+    const signInWithGoogle = () => {
+        const provider = new firebase.auth.GoogleAuthProvider();
         auth.signInWithPopup(provider);
     }
 
     return (
-        <button onClick={signInWithFacebook}>Sign in with Facebook</button>
+        <button onClick={signInWithGoogle}>Sign in with Google</button>
     );
 }
 
