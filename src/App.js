@@ -27,23 +27,23 @@ function Chat() {
 
     return (
         <div>
-            {user ? <ChatRoom /> : <SignIn />}
+            {user ? <ChatRoom user={user} /> : <SignIn />}
         </div>
     );
 }
 
 function SignIn() {
-    const signInWithFacebook = () => {
-        const provider = new firebase.auth.FacebookAuthProvider();
+    const signInWithGoogle = () => {
+        const provider = new firebase.auth.GoogleAuthProvider();
         auth.signInWithPopup(provider);
     }
 
     return (
-        <button onClick={signInWithFacebook}>Sign in with Facebook</button>
+        <button onClick={signInWithGoogle}>Sign in with Google</button>
     );
 }
 
-function ChatRoom() {
+function ChatRoom({ user }) {
     const messagesRef = firestore.collection('messages');
     const query = messagesRef.orderBy('createdAt').limit(25);
     const [messages] = useCollectionData(query, { idField: 'id' });
@@ -53,12 +53,13 @@ function ChatRoom() {
     const sendMessage = async (e) => {
         e.preventDefault();
 
-        const { uid, photoURL } = auth.currentUser;
+        const { uid, photoURL, displayName } = auth.currentUser;
 
         await messagesRef.add({
             text: formValue,
             createdAt: firebase.firestore.FieldValue.serverTimestamp(),
             uid,
+            displayName: displayName || 'Anonymous',
             photoURL
         });
 
@@ -72,22 +73,25 @@ function ChatRoom() {
             </div>
 
             <form onSubmit={sendMessage}>
-                <input value={formValue} onChange={(e) => setFormValue(e.target.value)} />
+                <input
+                    value={formValue}
+                    onChange={(e) => setFormValue(e.target.value)}
+                    placeholder="Type your message here..."
+                />
                 <button type="submit">Send</button>
             </form>
         </div>
     );
 }
 
-function ChatMessage(props) {
-    const { text, uid, photoURL } = props.message;
-
+function ChatMessage({ message }) {
+    const { text, uid, photoURL, displayName } = message;
     const messageClass = uid === auth.currentUser.uid ? 'sent' : 'received';
 
     return (
         <div className={`message ${messageClass}`}>
-            <img src={photoURL} alt="" />
-            <p>{text}</p>
+            <img src={photoURL || 'https://via.placeholder.com/50'} alt="Profile" />
+            <p>{displayName}: {text}</p>
         </div>
     );
 }
