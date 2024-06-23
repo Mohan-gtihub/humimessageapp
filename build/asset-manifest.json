@@ -1,0 +1,13 @@
+{
+  "files": {
+    "main.css": "/messenger-app-for-humi/static/css/main.ec6dcf85.css",
+    "main.js": "/messenger-app-for-humi/static/js/main.ec3575eb.js",
+    "index.html": "/messenger-app-for-humi/index.html",
+    "main.ec6dcf85.css.map": "/messenger-app-for-humi/static/css/main.ec6dcf85.css.map",
+    "main.ec3575eb.js.map": "/messenger-app-for-humi/static/js/main.ec3575eb.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.ec6dcf85.css",
+    "static/js/main.ec3575eb.js"
+  ]
+}
