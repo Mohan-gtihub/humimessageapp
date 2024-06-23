@@ -8,12 +8,12 @@ import './App.css';
 
 // Your web app's Firebase configuration
 const firebaseConfig = {
-    apiKey: "AIzaSyD4i9nBFpNcaOWjrI1Fy8AtYBEOF7Qfd7o",
-    authDomain: "humiapp-b1fdc.firebaseapp.com",
-    projectId: "humiapp-b1fdc",
-    storageBucket: "humiapp-b1fdc.appspot.com",
-    messagingSenderId: "6286226417",
-    appId: "1:6286226417:web:17c6f332de2d3343370a50"
+   apiKey: "AIzaSyD4i9nBFpNcaOWjrI1Fy8AtYBEOF7Qfd7o",
+  authDomain: "humiapp-b1fdc.firebaseapp.com",
+  projectId: "humiapp-b1fdc",
+  storageBucket: "humiapp-b1fdc.appspot.com",
+  messagingSenderId: "6286226417",
+  appId: "1:6286226417:web:17c6f332de2d3343370a50"
 };
 
 // Initialize Firebase
